@@ -123,7 +123,7 @@ class Quiz {
     loadQuestions() {
         this.questionNumber = document.querySelector('#question_number')
         this.questionNumber.textContent = this.curQuestionIndex + 1;
-        this.questionH1.textContent = this.curQuestion.question.replace(/&quot;/g,'"', /&#039;/g,"'")
+        this.questionH1.textContent = this.curQuestion.question.replace(/&quot;/g,'"').replace(/&#039;/g, "'")
         let options = ''
         this.curQuestion.options.forEach((i) => {
             const isSelected = this.curQuestion.selectedAnswer === i
