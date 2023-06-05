@@ -108,7 +108,7 @@
     background: #f38e82;
     font-size: 20px;
     margin: 25px 30px 0 0;
-    width: 120px;
+    width: 70px;
     border-radius: 45px;
     padding: 20px;
     letter-spacing: 5px;
@@ -248,4 +248,289 @@ button[disabled] {
     color: white;
     padding: 9px;
     cursor: not-allowed;
+}
+
+/* Project Responsiveness --- Media Query */
+@media screen and (max-width: 912px) {
+    #quiz_section {
+        max-width: 100%
+    }
+    .quiz_section_header {
+        display: flex;
+        justify-content: space-between !important;
+        width: 50.5rem;
+        padding-bottom: 15px;
+     }
+    .question_selector select {
+        width: 19rem;
+        margin-bottom: 20px;
+        padding: 15px;
+        outline: none;
+        border: transparent;
+        appearance: none;
+        font-size: 15px;
+        border-radius: 10px 0;
+    }
+}
+
+@media screen and (max-width: 878px) {
+    .quiz_section_header {
+        display: flex;
+        justify-content: space-between !important;
+        width: 50rem;
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .trigger_btns {
+        width: 42rem;
+    }
+    .quiz_section_header {
+        display: flex;
+        justify-content: space-between !important;
+        width: 47rem;
+        padding-bottom: 15px;
+    }
+    .section_question, .section_timer {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 739px) {
+    .quiz_section_header {
+        display: flex;
+        justify-content: space-between !important;
+        /* width: 40rem; */
+        width: 100%;
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .imgPart {
+        display: none;
+    }
+    .textPart {
+        margin: auto
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .trigger_btns {
+        width: 37rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .trigger_btns {
+        width: 33rem;
+    }
+    .question h1 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 587px) {
+    .trigger_btns {
+        width: 31rem;
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (max-width: 531px) {
+    .trigger_btns {
+        width: 26.5rem;
+    }
+    .trigger_btns .submit_btn button {
+        width: 200px
+    }
+}
+
+@media screen and (max-width: 461px) {
+    .trigger_btns {
+        width: 23.5rem;
+    }
+    .trigger_btns .submit_btn button {
+        width: 150px
+    }
+}
+
+@media screen and (max-width: 413px) {
+    .trigger_btns {
+        width: 20.5rem;
+    }
+    .trigger_btns .submit_btn button {
+        width: 100px
+    }
+    .question_background {
+        height: 28rem
+    }
+    #quiz_section {
+        height: 41rem
+    }
+}
+
+@media screen and (max-width: 362px) {
+    .container {
+        max-width: 100%;
+    }
+    .trigger_btns {
+        width: 17.5rem;
+    }
+    .question h1 {
+        font-size: 20px;
+        padding: 20px  0 50px 0;
+    }
+    .question_selector select {
+        width: 19rem;
+        margin-bottom: 20px;
+        padding: 15px;
+        outline: none;
+        border: transparent;
+        appearance: none;
+        font-size: 15px;
+        border-radius: 10px 0;
+    }
+    .quiz_section_header {
+        display: flex;
+        justify-content: space-between;
+        margin-left: -15px;
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 352px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .textPart h4 { 
+        text-align: center; 
+        width: 20rem;
+        padding: 0 2px;
+        margin-left: -5px;
+    }
+    .question_selector select {
+        max-width: 15rem;
+        margin-bottom: 20px;
+        padding: 15px;
+        outline: none;
+        border: transparent;
+        appearance: none;
+        font-size: 15px;
+        border-radius: 10px 0;
+    }
+}
+
+@media screen and (max-width: 312px) {
+    .container {
+        max-width: 100%;
+    }
+    .prev_btn button, .next_btn button {
+        padding: 6px;
+        width: 50px;
+        font-size: 10px;
+        margin-left: -10px;
+    }
+    .submit_btn button {
+        padding: 6px;
+        width: 20px;
+        font-size: 10px;
+        margin-left: -10px;
+    }
+
+    .quiz_section_header {
+        display: flex;
+        justify-content: space-between !important;
+        width: 17rem;
+        padding-bottom: 15px;
+    }
+    .section_question, .section_timer {
+        padding: 5px;
+        font-size: 10px;
+        width: 60px;
+    }
+    .section_timer { width: 50px; }
+
+    #question_number {
+        background: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        height: 10px;
+    }
+
+    .trigger_btns {
+        width: 13rem;
+    }
+
+    .textPart h4 { 
+        text-align: center; 
+        width: 18rem;
+        padding: 0 2px;
+        margin-left: -5px;
+    }
+    .textPart .textPart_input, button {
+        text-align: center;
+        margin-left: -80px;
+    }
+
+    .question_selector {
+        width: 22.5rem;
+    }
+    .question_selector select {
+        width: 128rem;
+        margin-left: -60px;
+        margin-bottom: 20px;
+        padding: 15px;
+        outline: none;
+        border: transparent;
+        appearance: none;
+        font-size: 15px;
+        border-radius: 10px 0;
+    }
+}
+
+@media screen and (max-width: 291px) {
+    .settings {
+        height: 26rem !important;
+    }
+
+    .textSuccess, .textDanger, .total_score {
+        font-size: 23px;
+        padding: 12px 0;
+    }
+}
+
+@media screen and (max-width: 281px) {
+    .container {
+        max-width: 170rem !important;
+    }
+
+    .textPart h4 { 
+        text-align: center; 
+        width: 16rem;
+        padding: 0 2px;
+        margin-left: -5px;
+    }
+    .textPart .textPart_input, button {
+        text-align: center;
+        margin-left: -22px;
+    }
+
+    .question_selector {
+        width: 15.5rem;
+    }
+
+    .question_selector select {
+        width: 13rem;
+        margin-left: -5px;
+        margin-bottom: 20px;
+        padding: 15px;
+        outline: none;
+        border: transparent;
+        appearance: none;
+        font-size: 13px;
+        border-radius: 10px 0;
+    }
 }
