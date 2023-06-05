@@ -42,6 +42,7 @@ class Quiz {
                     return {...item, options, selectedAnswer: "" }
                 })
                 this.questions = transformedResp
+                console.log(this.questions)
                 this.curQuestion = this.questions[this.curQuestionIndex]
                 resolve({})
                 localStorage.setItem('UserChoice', JSON.stringify(data?.results))
@@ -70,7 +71,11 @@ class Quiz {
         this.curQuestionIndex++
         this.curQuestion = this.questions[this.curQuestionIndex]
         this.loadQuestions()
-        if(this.questions[this.curQuestionIndex].selectedAnswer !== "") this.nextBtn.removeAttribute("disabled")
+        if(this.questions[this.curQuestionIndex].selectedAnswer !== "" && this.questions[this.curQuestionIndex] !== this.questions[this.questions.length - 1]) {
+            this.nextBtn.removeAttribute("disabled")
+        }
+        console.log(this.questions[this.curQuestionIndex])
+        console.log(+this.questions.length)
     }
 
     handlePrevQuestion() {
@@ -81,6 +86,9 @@ class Quiz {
         this.nextBtn.removeAttribute("disabled");
         this.curQuestionIndex--
         this.curQuestion = this.questions[this.curQuestionIndex]
+        this.firstQuestion = this.questions[0]
+        console.log(this.firstQuestion)
+        if(this.curQuestion === this.firstQuestion) this.prevBtn.setAttribute("disabled", true)
         this.loadQuestions()
     }
 
