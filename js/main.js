@@ -64,9 +64,9 @@ const startQuiz = async (e) => {
     try {
         await quiz.getQuestionsFromApi()
         quiz.beginQuiz()
-        quizStartBtn.textContent = "Let's Begin"
+        quizStartBtn.textContent = "Start Quiz"
     }catch(err) {
-        quizStartBtn.textContent = "Let's Begin"
+        quizStartBtn.textContent = "Start Quiz"
         console.log(err)
     }
     
