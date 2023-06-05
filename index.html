@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+
+        <main class="container" id="welcome">
+                <div class="imgPart">
+                        <h1>Welcome To The Quiz App</h1>
+                        <img src="./img/quiz.jpg" alt="quiz_img">
+                </div>
+                <div class="textPart">
+                        <h4>Kindly select your questions preference to get started!!!</h4>
+                        <div class="question_selector">
+                                <select name="" id="num_selector"></select>
+                                <select name="" id="category_selector"></select>
+                                <select name="" id="difficulty_selector"></select>
+                                <select name="" id="option-type_selector"></select>
+                        </div>
+                        <div>
+                                <input type="checkbox" name="is-timed" id="is-timed">
+                                <label for="is-timed" class="selector-label">Time Quiz</label>
+                        </div>
+                        <button class="btn_submit" onclick="startQuiz()" id="start_quiz">Let's Begin</button>
+                </div>       
+        </main>
+
+        <section id="quiz_section" class="display">
+                <div class="quiz_section_header">
+                        <div class="section_question">
+                                Question: <span id="question_number">1</span>
+                        </div>
+                        <div class="section_timer" id="timer">
+                                05:22
+                        </div>
+                </div>
+                <div class="question_background">
+                        <div id="question_body" class="question">
+                                <h1 class="question_h1">What is your name</h1>
+                        </div>
+                        <section class="options" id="options_container">
+                                <div class="d-flex option p-3">
+                                        <input type="radio" name="answer" id="questionA">
+                                        <label for="questionA" class="ms-2">Go home</label>
+                                </div>
+                                <div class="d-flex option p-3">
+                                        <input type="radio" name="answer" id="questionA">
+                                        <label for="questionA" class="ms-2">Go home</label>
+                                </div>
+                                <div class="d-flex option p-3">
+                                        <input type="radio" name="answer" id="questionA">
+                                        <label for="questionA" class="ms-2">Go home</label>
+                                </div>
+                        </section>
+                </div>
+                <div class="trigger_btns">
+                        <div class="prev_btn"><button type="button" onclick="prevQuestion()" id="prev" disabled>Prev</button></div>
+                        <div class="submit_btn"><button type="button" id="submit" disabled onclick="handleSubmit()">Submit</button></div>
+                        <div class="next_btn"><button type="button" onclick="nextQuestion()" id="next" disabled>Next</button></div>
+                </div>
+        </section>
+
+        <main class="my-5 settings display" id="quizSummary">
+                <h3 class="summary_h1">Results</h3>
+                <table class="summaryTable">
+                        <tbody>
+                                <tr>
+                                        <td class="textSuccess"><b>Correct score</b></td>
+                                        <td class="textSuccess" id="correct_score">50</td>
+                                </tr>
+                                <tr>
+                                        <td class="textDanger"><b>Wrong score</b></td>
+                                        <td class="textDanger" id="wrong_score">20</td>
+                                </tr>
+                                <tr>
+                                        <td class="total_score"><b>Total</b></td>
+                                        <td class="total_score"><b id="total_score">100</b></td>
+                                </tr>
+                        </tbody>
+                </table>
+                <div class="summaryBtns">
+                        <button class="btnWelcome w-100 mt-2" id="welcome_page" onclick="welcomePage()">Welcome Page</button>
+                </div>
+        </main>
+    
+    <script src="./js/quiz.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
