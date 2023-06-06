@@ -38,7 +38,6 @@ const startQuiz = async (e) => {
     try {
         await quiz.getQuestionsFromApi()
         quiz.beginQuiz()
-        // await quiz.handleQuizCategory()
         quizStartBtn.textContent = "Start Quiz"
     }catch(err) {
         quizStartBtn.textContent = "Start Quiz"
@@ -52,7 +51,8 @@ const startQuiz = async (e) => {
         quizSection.classList.remove("display")
     }else{
         window.alert('The Question combination you selected is unavailable, please select another one')
-        welcome.classList.add("display");
+        welcome.classList.remove("display");
+        quizStartBtn.style.width = '130px'
     } 
 }
 
