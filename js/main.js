@@ -1,32 +1,6 @@
-const DATA = [
-    { value: '9', name: 'General Knowledge' },
-    { value: '10', name: 'Entertainment: Books' },
-    { value: '11', name: 'Entertainment: Film' },
-    { value: '12', name: 'Entertainment: Music' },
-    { value: '13', name: 'Entertainment: Musical & Theatres' },
-    { value: '14', name: 'Entertainment: Television' },
-    { value: '15', name: 'Entertainment: Video Games' },
-    { value: '16', name: 'Entertainment: Board Games' },
-    { value: '17', name: 'Science & Nature' },
-    { value: '18', name: 'Science: Computers' },
-    { value: '19', name: 'Science: Mathematics' },
-    { value: '20', name: 'Mythology' },
-    { value: '21', name: 'Sports' },
-    { value: '22', name: 'Geography' },
-    { value: '23', name: 'History' },
-    { value: '24', name: 'Politics' },
-    { value: '25', name: 'Art' },
-    { value: '26', name: 'Celebrities' },
-    { value: '27', name: 'Animals' },
-    { value: '28', name: 'Vehicles' },
-    { value: '29', name: 'Entertainment: Comics' },
-    { value: '30', name: 'Science: Gadgets' },
-    { value: '31', name: 'Entertainment: Japanese Anime & Manga' },
-    { value: '32', name: 'Entertainment: Cartoon & Animations' }
-]
+const CATEGORY_URL = 'https://opentdb.com/api_category.php'
 
 let quiz;
-// const data = JSON.parse(localStorage.getItem('UserChoice'))
 
 const selectedQuestionOption = document.querySelector('#num_selector')
 const selectedCategoryOption = document.querySelector('#category_selector')
@@ -64,6 +38,7 @@ const startQuiz = async (e) => {
     try {
         await quiz.getQuestionsFromApi()
         quiz.beginQuiz()
+        // await quiz.handleQuizCategory()
         quizStartBtn.textContent = "Start Quiz"
     }catch(err) {
         quizStartBtn.textContent = "Start Quiz"
@@ -99,12 +74,25 @@ const chosenAnswer = (event) => {
 }
 
 const handleQuizCategory = () => {
-    let selectCategoryOption = ""
-
-    selectCategoryOption = DATA.map((item) => {
-        return `<option value="${item.value}">${item.name}</option>`
+    return new Promise((resolve, reject) => {
+        fetch(`${CATEGORY_URL}`)
+        .then(resp => {
+            const data = resp.json()
+            return data
+        })
+        .then(data => {
+            let selectCategoryOption = ""
+            selectCategoryOption = data?.trivia_categories.map((item) => {
+                return `<option value="${item.id}">${item.name}</option>`
+            })
+            selectedCategoryOption.innerHTML = selectCategoryOption
+            resolve({})
+        })
+        .catch(err => {
+            reject({})
+            alert(err)
+        })
     })
-    selectedCategoryOption.innerHTML = selectCategoryOption
 }
 handleQuizCategory()
 

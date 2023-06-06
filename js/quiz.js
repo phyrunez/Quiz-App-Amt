@@ -136,8 +136,8 @@ class Quiz {
         this.curQuestion.options.forEach((i) => {
             const isSelected = this.curQuestion.selectedAnswer === i
             options += `<div class="option">   
-                            <input type="radio" name="answer" value="${i}" onchange="chosenAnswer(event)" class=${isSelected ? "checked-answer" : "unchecked-answer"} />
-                            <label for="questionA" class="adjustLabel">${i}</label>
+                            <input type="radio" id="${i}" name="answer" value="${i}" onchange="chosenAnswer(event)" class=${isSelected ? "checked-answer" : "unchecked-answer"} />
+                            <label for="${i}" class="adjustLabel">${i}</label>
                         </div>`
         })
         this.optionsContainer.innerHTML = options;

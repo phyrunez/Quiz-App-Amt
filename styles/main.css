@@ -144,6 +144,8 @@
     padding: 0px;
 }
 
+.adjustLabel { cursor: pointer }
+
 .trigger_btns {
     display: flex;
     justify-content: space-between;
