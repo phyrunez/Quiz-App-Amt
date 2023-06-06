@@ -73,26 +73,18 @@ const chosenAnswer = (event) => {
     quiz.selectedAnswer(answer)
 }
 
-const handleQuizCategory = () => {
-    return new Promise((resolve, reject) => {
-        fetch(`${CATEGORY_URL}`)
-        .then(resp => {
-            const data = resp.json()
-            return data
+const handleQuizCategory = async () => {
+    try {
+        let selectCategoryOption = ""
+        const res = await fetch(`${CATEGORY_URL}`)
+        const data = await res.json()
+        selectCategoryOption = data?.trivia_categories.map((item) => {
+            return `<option value="${item.id}">${item.name}</option>`
         })
-        .then(data => {
-            let selectCategoryOption = ""
-            selectCategoryOption = data?.trivia_categories.map((item) => {
-                return `<option value="${item.id}">${item.name}</option>`
-            })
-            selectedCategoryOption.innerHTML = selectCategoryOption
-            resolve({})
-        })
-        .catch(err => {
-            reject({})
-            alert(err)
-        })
-    })
+        selectedCategoryOption.innerHTML = selectCategoryOption
+    }catch(err) {
+        console.log(err)
+    }
 }
 handleQuizCategory()
 
